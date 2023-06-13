@@ -1,4 +1,4 @@
-# blog-pessoal-front
+# Blog Pessoal Frontend
 
 Tem como definição ser um frontend com react.js usando vite, complemento do backend do repositório de java.
 Onde foi criado usuários com autenticação, poderam criar posts e temas desse posts para se expressar, gostaria de colocar o que eu gosto, animes, jogos e buscar diferenciar do padrão de blog comum.
