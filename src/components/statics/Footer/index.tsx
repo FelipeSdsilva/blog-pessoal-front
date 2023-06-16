@@ -1,37 +1,37 @@
-import InstagramIcon from '@material-ui/icons/Instagram';
+import { GitHub } from '@material-ui/icons'; 
 import FacebookIcon from '@material-ui/icons/Facebook';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
-import { Typography, Grid } from '@material-ui/core';
-import { Box } from '@mui/material';
+import { Typography, Grid, Box } from '@material-ui/core';
+import style from './style.module.css'
 
 
 export default function Footer() {
     return (<>
-        <Grid container direction="row" justifyContent="center" alignItems="center">
+        <Grid container >
             <Grid alignItems="center" item xs={12}>
-                <Box style={{ backgroundColor: "#3F51B5", height: "100px" }}>
-                    <Box paddingTop={1} display="flex" alignItems="center" justifyContent="center">
-                        <Typography variant="h5" align="center" gutterBottom style={{ color: "white" }}>Siga-nos nas redes sociais </Typography>
+                <Box className={style.box1}>
+                    <Box className={style.box1a}>
+                        <Typography variant="h5" className={style.textos}>Siga-nos nas redes sociais </Typography>
                     </Box>
                     <Box display="flex" alignItems="center" justifyContent="center">
                         <a href="https://www.facebook.com/generationbrasil" target="_blank">
-                            <FacebookIcon style={{ fontSize: 50, color: "white" }} />
+                            <FacebookIcon className={style.redes} />
                         </a>
-                        <a href="https://www.instagram.com/generationbrasil/" target="_blank">
-                            <InstagramIcon style={{ fontSize: 50, color: "white" }} />
+                        <a href="https://github.com/FelipeSdsilva" target="_blank">
+                            <GitHub className={style.redes} />
                         </a>
-                        <a href="https://www.linkedin.com/school/generationbrasil/" target="_blank">
-                            <LinkedInIcon style={{ fontSize: 50, color: "white" }} />
+                        <a href="https://www.linkedin.com/in/felipesdsilva/" target="_blank">
+                            <LinkedInIcon className={style.redes} />
                         </a>
                     </Box>
                 </Box>
-                <Box style={{ backgroundColor: "#303F9F", height: "60px" }}>
+                <Box className={style.box2}>
                     <Box paddingTop={1}>
-                        <Typography variant="subtitle2" align="center" gutterBottom style={{ color: "white" }} >© 2020 Copyright:</Typography>
+                        <Typography variant="subtitle2" gutterBottom className={style.textos} >© 2020 Copyright:</Typography>
                     </Box>
                     <Box>
                         <a target="_blank" href="https://brasil.generation.org">
-                            <Typography variant="subtitle2" gutterBottom style={{ color: "white" }} align="center">brasil.generation.org</Typography>
+                            <Typography variant="subtitle2" gutterBottom className={style.textos} >brasil.generation.org</Typography>
                         </a>
                     </Box>
                 </Box>

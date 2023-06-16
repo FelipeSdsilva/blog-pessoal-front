@@ -1,0 +1,37 @@
+:root {
+    --color-font: #fff;
+    --centralize-itens: center;
+}
+
+.container {
+    direction: row;
+    justify-content: var(--centralize-itens);
+    align-items: var(--centralize-itens);
+}
+
+.box1 {
+    background-color: #1e1e22;
+    height: 100px;
+}
+
+.box1a {
+    padding-top: 1;
+    display: flex;
+    align-items: var(--centralize-itens);
+    justify-content: var(--centralize-itens);
+}
+
+.box2 {
+    background-color: #0b0b0c;
+    height: 60px;
+}
+
+.redes {
+    font-size: 50px !important;
+    color: var(--color-font);
+}
+
+.textos {
+    color: var(--color-font);
+    text-align: var(--centralize-itens);
+}

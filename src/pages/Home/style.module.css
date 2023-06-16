@@ -1,0 +1,25 @@
+﻿.cardHome {
+    background-color: #29282B;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo {
+    color: white;
+    font-weight: "lighter";
+}
+
+.botao {
+    border-color: white !important;
+    background-color: #3F51B5 !important;
+    color: #FFF !important;
+}
+
+.img {
+    width: 500px;
+    height: 500px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10%;
+    margin: 20px;
+}
