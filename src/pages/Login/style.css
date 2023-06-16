@@ -1,0 +1,5 @@
+.container{
+    justify-content: center;
+    direction: row;
+    align-items: center;
+}
