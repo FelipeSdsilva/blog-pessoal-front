@@ -30,8 +30,8 @@ export default function Footer() {
                         <Typography variant="subtitle2" gutterBottom className={style.textos} >© 2020 Copyright:</Typography>
                     </Box>
                     <Box>
-                        <a target="_blank" href="https://brasil.generation.org">
-                            <Typography variant="subtitle2" gutterBottom className={style.textos} >brasil.generation.org</Typography>
+                        <a target="_blank" href="https://www.linkedin.com/in/felipesdsilva/">
+                            <Typography variant="subtitle2" gutterBottom className={style.textos} >Felipe Sousa 2023</Typography>
                         </a>
                     </Box>
                 </Box>
