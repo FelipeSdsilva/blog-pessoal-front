@@ -5,7 +5,7 @@ import ImgLogin from '../../assets/img/Game analytics-amico.svg'
 import { Link, useNavigate } from 'react-router-dom'
 import UserLogin from '../../models/UserLogin';
 import useLocalStorage from 'react-use-localstorage';
-import { api } from '../../services/Service';
+import { api, login } from '../../services/Service';
 
 
 export default function Login() {
@@ -38,8 +38,7 @@ export default function Login() {
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault();
         try {
-            const resposta = await api.post(`/usuarios/logar`, userLogin)
-            setToken(resposta.data.token)
+            await login(`/usuarios/logar`, userLogin, setToken)
 
             alert('Usuário logado com sucesso!');
         } catch (error) {

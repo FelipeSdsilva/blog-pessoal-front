@@ -8,7 +8,7 @@ import './style.css'
 
 export default function Cadastro() {
 
-    let navigate = useNavigate();
+    const navigate = useNavigate();
     const [confirmarSenha, setConfirmarSenha] = useState<string>("")
     const [user, setUser] = useState<User>(
         {
@@ -74,12 +74,9 @@ export default function Cadastro() {
                                         Cancelar
                                     </Button>
                                 </Link>
-                                <Link to='/home' className='text-decorator-none'>
-                                    <Button type='submit' variant='contained' color='primary'>
-                                        Cadastrar-se
-                                    </Button>
-                                </Link>
-
+                                <Button type='submit' variant='contained' color='primary'>
+                                    Cadastrar-se
+                                </Button>
                             </Box>
                         </form>
                     </Box>
