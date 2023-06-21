@@ -1,5 +1,7 @@
-﻿import { Grid, Typography, Button, Box} from '@material-ui/core'
+﻿import { Grid, Typography, Button, Box } from '@material-ui/core'
+import ImgWelcome from '../../assets/img/Blog post-bro.svg'
 import style from './style.module.css'
+import TabPostagem from '../../components/posts/TabPostagem'
 
 export default function Home() {
     return (
@@ -17,9 +19,10 @@ export default function Home() {
                     </Box>
                 </Grid>
                 <Grid item xs={6} >
-                    <img src="https://images.pexels.com/photos/6153738/pexels-photo-6153738.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Imagem Home" className={style.img} />
+                    <img src={ImgWelcome} alt="" className={style.img} />
                 </Grid>
                 <Grid item xs={12} style={{ backgroundColor: "white" }}>
+                    <TabPostagem />
                 </Grid>
             </Grid>
         </>
