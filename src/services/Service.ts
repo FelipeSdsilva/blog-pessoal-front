@@ -26,12 +26,12 @@ export const buscaId = async (url: any, dados: any, setDado: any, header: any) =
 
 
 export const post = async (url: any, dados: any, setDado: any, header: any) => {
-  const resp = await api.post(url, header)
+  const resp = await api.post(url, dados, header)
   setDado(resp.data)
 }
 
 export const put = async (url: any, dados: any, setDado: any, header: any) => {
-  const resp = await api.put(url, header)
+  const resp = await api.put(url, dados, header)
   setDado(resp.data)
 }
 
