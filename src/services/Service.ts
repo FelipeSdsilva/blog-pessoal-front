@@ -19,7 +19,7 @@ export const busca = async (url: any, setDado: any, header: any) => {
   setDado(resposta.data)
 }
 
-export const buscaId = async (url: any, dados: any, setDado: any, header: any) => {
+export const buscaId = async (url: any, setDado: any, header: any) => {
   const resp = await api.get(url, header)
   setDado(resp.data)
 }
@@ -35,6 +35,6 @@ export const put = async (url: any, dados: any, setDado: any, header: any) => {
   setDado(resp.data)
 }
 
-export const deleteId = async (url: any, dados: any, setDado: any, header: any) => {
-  await api.put(url, header)
+export const deleteId = async (url: any, header: any) => {
+  await api.delete(url, header)
 }
