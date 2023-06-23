@@ -1,12 +1,9 @@
-.navBar{
+.navBar {
     background-color: #1e1e22 !important;
 }
 
-.text-decoration-none {
-    text-decoration: none;
-}
-
-.cursor {
+.cursor,.text-decoration-none  {
     cursor: pointer;
     color: #FFF;
+    text-decoration: none;
 }

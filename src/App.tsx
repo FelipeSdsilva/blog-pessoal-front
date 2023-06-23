@@ -1,11 +1,15 @@
-import NavBar from './components/statics/NavBar'
-import Footer from './components/statics/Footer'
-import Home from './pages/Home'
+import Home from './pages/home/Home'
+import Login from './pages/login/Login'
+import Cadastro from './pages/cadastro/Cadastro'
+import NavBar from './components/statics/navbar/Navbar'
+import Footer from './components/statics/footer/Footer'
+import ListaTema from './components/themes/listaTema/ListaTema'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Login from './pages/Login'
-import Cadastro from './pages/Cadastro'
-import ListaPostagem from './components/posts/ListaPostagem'
-import ListaTema from './components/themes/ListaTema'
+import DeletarPost from './components/posts/deletarPost/DeletarPost'
+import DeletarTema from './components/themes/deletarTema/DeletarTema'
+import CadastroPost from './components/posts/cadastroPost/CadastroPost'
+import CadastroTema from './components/themes/cadastroTema/CadastroTema'
+import ListaPostagem from './components/posts/listaPostagem/ListaPostagem'
 
 export default function App() {
 
@@ -14,12 +18,20 @@ export default function App() {
       <NavBar />
       <div style={{ minHeight: '100vh' }}>
         <Routes> // Antigo Switch
+          
           <Route path="/" element={<Login />} />
           <Route path="/login" element={<Login />} />
           <Route path="/home" element={<Home />} />
           <Route path="/cadastro" element={<Cadastro />} />
           <Route path="/posts" element={<ListaPostagem />} />
           <Route path="/temas" element={<ListaTema />} />
+          <Route path="/formularioPostagem" element={<CadastroPost />} />
+          <Route path="/formularioPostagem/:id" element={<CadastroPost />} />
+          <Route path="/formularioTema" element={<CadastroTema />} />
+          <Route path="/formularioTema/:id" element={<CadastroTema />} />
+          <Route path="/deletarPostagem/:id" element={<DeletarPost />} />
+          <Route path="/deletarTema/:id" element={<DeletarTema />} />
+
         </Routes>
       </div>
       <Footer />

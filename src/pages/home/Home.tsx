@@ -1,7 +1,7 @@
 ﻿import { Grid, Typography, Button, Box } from '@material-ui/core'
+import TabPostagem from '../../components/posts/tabPostagem/TabPostagem'
 import ImgWelcome from '../../assets/img/Blog post-bro.svg'
-import style from './style.module.css'
-import TabPostagem from '../../components/posts/TabPostagem'
+import style from './home.module.css'
 
 export default function Home() {
     return (

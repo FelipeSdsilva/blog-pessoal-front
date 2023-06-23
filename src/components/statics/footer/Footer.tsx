@@ -2,7 +2,7 @@ import { GitHub } from '@material-ui/icons';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import { Typography, Grid, Box } from '@material-ui/core';
-import style from './style.module.css'
+import style from './footer.module.css'
 
 
 export default function Footer() {
