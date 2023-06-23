@@ -12,7 +12,7 @@ export default function ListaTema() {
 
     const [temas, setTemas] = useState<Tema[]>([])
     const [token, setToken] = useLocalStorage('token');
-    let navigate = useNavigate();
+    const navigate = useNavigate();
 
     useEffect(() => {
         if (token == '') {
@@ -29,7 +29,6 @@ export default function ListaTema() {
             }
         })
     }
-
 
     useEffect(() => {
         getTema()

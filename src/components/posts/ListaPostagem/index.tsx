@@ -30,9 +30,7 @@ export default function ListaPostagem() {
     }
 
     useEffect(() => {
-
         getPost()
-
     }, [posts.length])
 
     return (
