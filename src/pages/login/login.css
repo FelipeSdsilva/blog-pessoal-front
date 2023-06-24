@@ -1,22 +1,63 @@
-.imagem {
-    background-repeat: no-repeat;
-    width: 100vh;
-    min-height: 100vh;
-    background-size: cover;
-    background-position: center;
+:root {
+    /* Variaveis para cores */
+    --color-text-box-login: #FFF;
+    --color-backgroud-container-login: #28282e;
+
+    /*Variaveis para centralizacao*/
+    --centralization-padron: center;
+}
+
+.grid-container {
+    margin-top: 5vh;
+    height: 70vh;
+    margin-bottom: 6.7vh;
+    justify-content: var(--centralization-padron);
+}
+
+.grid-item {
+    display: flex;
+    align-items: var(--centralization-padron);
+    justify-content: var(--centralization-padron);
+}
+
+.box-container {
+    padding: 15px;
+    height: 49.8vh;
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    color: var(--color-text-box-login);
+    align-items: var(--centralization-padron);
+    justify-content: var(--centralization-padron);
+    background-color: var(--color-backgroud-container-login);
+}
+
+
+.text-login {
+    color: var(--color-text-box-login);
+    text-align: var(--centralization-padron);
+}
+
+.input-text {
+    border-radius: 10px;
+    color: #000;
+    background-color: #bcc1ca;
 }
 
 .text-decorator-none {
     text-decoration: none;
+    color: var(--color-text-box-login);
 }
-.box-input{
-    background-color: #bcc1ca;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 1px #000;
-}
+
+
 .signUp:hover {
-    color: #000;
+    color: #3f51b5;
     font-weight: bold !important;
+}
+
+.imagem {
+    width: 36rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
 }

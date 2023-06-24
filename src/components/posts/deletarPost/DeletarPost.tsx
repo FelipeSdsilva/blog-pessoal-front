@@ -1,10 +1,10 @@
-import { Box, Button, Card, CardActions, CardContent, Typography } from '@material-ui/core'
-import './deletaPost.css'
-import { buscaId, deleteId } from '../../../services/Service'
 import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import useLocalStorage from 'react-use-localstorage'
+import { buscaId, deleteId } from '../../../services/Service'
+import { Box, Button, Card, CardActions, CardContent, Typography } from '@material-ui/core'
 import Postagem from '../../../models/Postagem'
+import useLocalStorage from 'react-use-localstorage'
+import './deletaPost.css'
 
 export default function DeletarPost() {
 
@@ -47,7 +47,6 @@ export default function DeletarPost() {
     function nao() {
         navigate('/posts')
     }
-
 
     return (
         <>

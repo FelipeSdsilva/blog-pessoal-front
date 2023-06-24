@@ -3,30 +3,31 @@
     --centralize-itens: center;
 }
 
-.container {
+
+.grid-footer {
     direction: row;
-    justify-content: var(--centralize-itens);
+    margin-top: auto;
     align-items: var(--centralize-itens);
+    justify-content: var(--centralize-itens);
 }
 
-.box1 {
-    background-color: #1e1e22;
-    height: 100px;
-}
 
-.box1a {
-    padding-top: 1;
+.box1-footer {
     display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    background-color: #1e1e22;
     align-items: var(--centralize-itens);
     justify-content: var(--centralize-itens);
 }
 
-.box2 {
-    background-color: #0b0b0c;
+
+.box2-footer {
     height: 60px;
+    background-color: #0b0b0c;
 }
 
-.redes {
+.network-footer {
     font-size: 50px !important;
     color: var(--color-font);
 }
