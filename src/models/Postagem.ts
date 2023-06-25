@@ -5,4 +5,5 @@ export default interface Postagem {
     titulo: string;
     texto: string;
     tema?: Tema | null
+    usuario?: null
 }

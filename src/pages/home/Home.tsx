@@ -1,9 +1,25 @@
-﻿import { Grid, Typography, Button, Box } from '@material-ui/core'
-import TabPostagem from '../../components/posts/tabPostagem/TabPostagem'
+﻿import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { Grid, Typography, Button, Box } from '@material-ui/core'
+import useLocalStorage from 'react-use-localstorage'
 import ImgWelcome from '../../assets/img/Blog post-bro.svg'
+import ModalPost from '../../components/posts/modalPost/ModalPost'
+import TabPostagem from '../../components/posts/tabPostagem/TabPostagem'
 import style from './home.module.css'
 
 export default function Home() {
+    const navigate = useNavigate();
+    const [token, setToken] = useLocalStorage('token');
+
+    useEffect(() => {
+        if (token == "") {
+            alert("Você precisa estar logado")
+            navigate("/login")
+
+        }
+    }, [token])
+
+
     return (
         <>
             <Grid container direction="row" className={style.cardHome}>
@@ -14,6 +30,7 @@ export default function Home() {
                     </Box>
                     <Box display="flex" justifyContent="center">
                         <Box marginRight={1}>
+                            <ModalPost />
                         </Box>
                         <Button variant="outlined" className={style.botao}>Ver Postagens</Button>
                     </Box>

@@ -72,7 +72,7 @@ export default function Login() {
                         </Box>
                     </Box>
                 </Grid>
-                <Grid xs={6} xl={12} className='grid-item'>
+                <Grid xs={6} className='grid-item'>
                     <Box className='imagem'>
                         <img src={ImgLogin} alt="" />
                     </Box>

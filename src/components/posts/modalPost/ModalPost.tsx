@@ -1,7 +1,14 @@
-import { Box } from '@material-ui/core';
-import './modalPost.css'
+import { Box } from '@mui/material';
+import { Button } from "@material-ui/core"
+import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
+import React from 'react'
+import Modal from '@material-ui/core/Modal';
+import CloseIcon from '@material-ui/icons/Close';
+import CadastroPost from '../cadastroPost/CadastroPost';
+import './modalPost.css';
 
-export default function getModalPost() {
+
+function getModalStyle() {
     const top = 50;
     const left = 50;
 
@@ -25,7 +32,7 @@ const useStyles = makeStyles((theme: Theme) =>
     }),
 );
 
-function ModalPostagem() {
+export default function ModalPost() {
     const classes = useStyles();
     const [modalStyle] = React.useState(getModalStyle);
     const [open, setOpen] = React.useState(false);

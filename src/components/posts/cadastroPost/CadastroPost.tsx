@@ -1,15 +1,14 @@
-import { ChangeEvent, useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
-import { busca, buscaId, post, put } from "../../../services/Service";
-import { Button, Container, FormControl, FormHelperText, InputLabel, MenuItem, Select, TextField, Typography } from "@material-ui/core"
-import Tema from "../../../models/Tema";
-import Postagem from "../../../models/Postagem";
-import useLocalStorage from "react-use-localstorage";
-import './cadastroPost.css'
-
+import { useNavigate, useParams } from 'react-router-dom'
+import { ChangeEvent, useEffect, useState } from 'react'
+import { busca, buscaId, post, put } from '../../../services/Service';
+import { Container, Typography, TextField, Button, Select, InputLabel, MenuItem, FormControl, FormHelperText } from "@material-ui/core"
+import Tema from '../../../models/Tema';
+import Postagem from '../../../models/Postagem';
+import useLocalStorage from 'react-use-localstorage';
+import './cadastroPost.css';
 
 export default function CadastroPost() {
-
+    
     const navigate = useNavigate();
     const { id } = useParams<{ id: string }>();
     const [temas, setTemas] = useState<Tema[]>([])
@@ -32,7 +31,9 @@ export default function CadastroPost() {
         id: 0,
         titulo: '',
         texto: '',
-        tema: null
+        tema: null,
+        usuario: null,
+        
     })
 
     useEffect(() => {
