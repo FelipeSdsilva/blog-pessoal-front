@@ -32,8 +32,6 @@ export default function CadastroPost() {
         titulo: '',
         texto: '',
         tema: null,
-        usuario: null,
-        
     })
 
     useEffect(() => {
