@@ -8,7 +8,7 @@ import useLocalStorage from 'react-use-localstorage';
 import './cadastroPost.css';
 
 export default function CadastroPost() {
-    
+
     const navigate = useNavigate();
     const { id } = useParams<{ id: string }>();
     const [temas, setTemas] = useState<Tema[]>([])
@@ -31,7 +31,7 @@ export default function CadastroPost() {
         id: 0,
         titulo: '',
         texto: '',
-        tema: null,
+        tema: null
     })
 
     useEffect(() => {
@@ -57,7 +57,7 @@ export default function CadastroPost() {
     }
 
     async function findByIdPostagem(id: string) {
-        await buscaId(`postagens/${id}`, setPostagem, {
+        await buscaId(`/postagens/${id}`, setPostagem, {
             headers: {
                 'Authorization': token
             }
@@ -95,7 +95,6 @@ export default function CadastroPost() {
         back()
 
     }
-
     function back() {
         navigate('/posts')
     }

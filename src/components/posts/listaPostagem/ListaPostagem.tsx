@@ -3,6 +3,7 @@ import { busca } from '../../../services/Service';
 import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom'
 import { Card, CardActions, CardContent, Button, Typography } from '@material-ui/core';
+import moment from 'moment';
 import Postagem from '../../../models/Postagem';
 import useLocalStorage from 'react-use-localstorage';
 import './listarPostagem.css'
@@ -10,7 +11,7 @@ import './listarPostagem.css'
 export default function ListaPostagem() {
 
     const [posts, setPosts] = useState<Postagem[]>([])
-    const [token, setToken] = useLocalStorage('token');
+    const [token] = useLocalStorage('token');
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -51,6 +52,10 @@ export default function ListaPostagem() {
                             <Typography variant="body2" component="p">
                                 {post.tema?.descricao}
                             </Typography>
+                            <Typography>
+                                {moment(post.data).locale('pt-br').format("DD/MM/YYYY HH:mm:ss")}
+                            </Typography>
+
                         </CardContent>
                         <CardActions>
                             <Box display="flex" justifyContent="center" mb={1.5}>
