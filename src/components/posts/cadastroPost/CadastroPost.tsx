@@ -6,13 +6,18 @@ import Tema from '../../../models/Tema';
 import Postagem from '../../../models/Postagem';
 import useLocalStorage from 'react-use-localstorage';
 import './cadastroPost.css';
+import { TokenState } from '../../../store/tokens/tokenReducer';
+import { useSelector } from 'react-redux';
 
 export default function CadastroPost() {
 
     const navigate = useNavigate();
     const { id } = useParams<{ id: string }>();
     const [temas, setTemas] = useState<Tema[]>([])
-    const [token, setToken] = useLocalStorage('token');
+    
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens
+    );
 
     useEffect(() => {
         if (token == "") {

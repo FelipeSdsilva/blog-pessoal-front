@@ -1,17 +1,20 @@
+import { useDispatch } from 'react-redux';
 import { api, login } from '../../services/Service';
 import { Link, useNavigate } from 'react-router-dom'
 import { ChangeEvent, useEffect, useState } from 'react';
 import { Box, Button, Grid, TextField, Typography } from '@material-ui/core'
-import ImgLogin from '../../assets/img/Game analytics-amico.svg'
-import useLocalStorage from 'react-use-localstorage';
 import UserLogin from '../../models/UserLogin';
+import ImgLogin from '../../assets/img/Game analytics-amico.svg'
 import './login.css'
+import { addToken } from '../../store/tokens/actions';
 
 
 export default function Login() {
 
     const navigate = useNavigate();
-    const [token, setToken] = useLocalStorage('token');
+    const dispatch = useDispatch();
+    const [token, setToken] = useState("");
+    
     const [userLogin, setUserLogin] = useState<UserLogin>(
         {
             id: 0,
@@ -31,6 +34,7 @@ export default function Login() {
 
     useEffect(() => {
         if (token != '') {
+            dispatch(addToken(token))
             navigate('/home')
         }
     }, [token])

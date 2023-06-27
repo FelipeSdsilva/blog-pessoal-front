@@ -1,8 +1,9 @@
+import { useSelector } from "react-redux";
 import { ChangeEvent, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { buscaId, post, put } from "../../../services/Service";
+import { TokenState } from "../../../store/tokens/tokenReducer";
 import { Button, Container, TextField, Typography } from "@material-ui/core";
-import useLocalStorage from "react-use-localstorage";
 import Tema from "../../../models/Tema";
 import './cadastroTema.css'
 
@@ -10,7 +11,11 @@ export default function CadastroTema() {
 
     const navigate = useNavigate();
     const { id } = useParams<{ id: string }>();
-    const [token, setToken] = useLocalStorage('token');
+
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens
+    );
+
     const [tema, setTema] = useState<Tema>({
         id: 0,
         descricao: ''

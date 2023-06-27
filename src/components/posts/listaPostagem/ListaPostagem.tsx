@@ -7,13 +7,18 @@ import moment from 'moment';
 import Postagem from '../../../models/Postagem';
 import useLocalStorage from 'react-use-localstorage';
 import './listarPostagem.css'
+import { TokenState } from '../../../store/tokens/tokenReducer';
+import { useSelector } from 'react-redux';
 
 export default function ListaPostagem() {
 
-    const [posts, setPosts] = useState<Postagem[]>([])
-    const [token] = useLocalStorage('token');
     const navigate = useNavigate();
-
+    const [posts, setPosts] = useState<Postagem[]>([])
+    
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens
+    );
+    
     useEffect(() => {
         if (token == "") {
             alert("Você precisa estar logado")

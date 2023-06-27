@@ -1,15 +1,19 @@
 ﻿import { useEffect } from 'react'
+import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import { TokenState } from '../../store/tokens/tokenReducer'
 import { Grid, Typography, Button, Box } from '@material-ui/core'
-import useLocalStorage from 'react-use-localstorage'
 import ImgWelcome from '../../assets/img/Blog post-bro.svg'
 import ModalPost from '../../components/posts/modalPost/ModalPost'
 import TabPostagem from '../../components/posts/tabPostagem/TabPostagem'
 import style from './home.module.css'
 
 export default function Home() {
+   
     const navigate = useNavigate();
-    const [token, setToken] = useLocalStorage('token');
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens
+    );
 
     useEffect(() => {
         if (token == "") {
