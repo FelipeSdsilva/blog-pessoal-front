@@ -1,10 +1,11 @@
-import { Box, Button, Grid, TextField, Typography } from '@material-ui/core'
-import { cadastroUsuario } from '../../services/Service';
 import { Link, useNavigate } from 'react-router-dom'
+import { cadastroUsuario } from '../../services/Service';
 import { useState, useEffect, ChangeEvent } from 'react';
+import { Box, Button, Grid, TextField, Typography } from '@material-ui/core'
 import User from '../../models/User';
 import ImgCadas from '../../assets/img/Visionary technology.gif'
 import './style.css'
+import { toast } from 'react-toastify';
 
 export default function Cadastro() {
 
@@ -50,11 +51,31 @@ export default function Cadastro() {
         e.preventDefault()
         if (confirmarSenha == user.senha) {
             cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult)
-            alert('Usuario cadastrado com sucesso')
+            toast.success('Usuário cadastrado com sucesso!', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            });
+
         } else {
-            alert('Dados inconsistentes. Favor verificar as informações de cadastro.')
+            toast.error('Dados do usuário inconsistentes. Erro ao logar!', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            });
         }
     }
+
 
     return (
         <>

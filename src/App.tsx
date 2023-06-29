@@ -1,6 +1,8 @@
+import { Provider } from 'react-redux'
+import { ToastContainer } from 'react-toastify'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import store from './store/store'
 import Home from './pages/home/Home'
-import { Provider } from 'react-redux'
 import Login from './pages/login/Login'
 import Cadastro from './pages/cadastro/Cadastro'
 import NavBar from './components/statics/navbar/Navbar'
@@ -10,13 +12,14 @@ import DeletarPost from './components/posts/deletarPost/DeletarPost'
 import DeletarTema from './components/themes/deletarTema/DeletarTema'
 import CadastroPost from './components/posts/cadastroPost/CadastroPost'
 import CadastroTema from './components/themes/cadastroTema/CadastroTema'
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import ListaPostagem from './components/posts/listaPostagem/ListaPostagem'
+import 'react-toastify/dist/ReactToastify.css'
 
 export default function App() {
 
   return (
-    <Provider store={store}>
+    <Provider store={store}>,
+      <ToastContainer />
       <BrowserRouter>
         <NavBar />
         <Routes> // Antigo Switch

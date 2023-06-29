@@ -7,7 +7,7 @@ import moment from 'moment';
 import Postagem from '../../../models/Postagem';
 import useLocalStorage from 'react-use-localstorage';
 import './listarPostagem.css'
-import { TokenState } from '../../../store/tokens/tokenReducer';
+import { TokenState } from '../../../store/tokens/tokensReducer';
 import { useSelector } from 'react-redux';
 
 export default function ListaPostagem() {

@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import { ChangeEvent, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { buscaId, post, put } from "../../../services/Service";
-import { TokenState } from "../../../store/tokens/tokenReducer";
+import { TokenState } from "../../../store/tokens/tokensReducer";
 import { Button, Container, TextField, Typography } from "@material-ui/core";
 import Tema from "../../../models/Tema";
 import './cadastroTema.css'

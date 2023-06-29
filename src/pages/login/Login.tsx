@@ -1,12 +1,13 @@
+import { toast } from 'react-toastify';
 import { useDispatch } from 'react-redux';
 import { api, login } from '../../services/Service';
 import { Link, useNavigate } from 'react-router-dom'
+import { addToken } from '../../store/tokens/actions';
 import { ChangeEvent, useEffect, useState } from 'react';
 import { Box, Button, Grid, TextField, Typography } from '@material-ui/core'
 import UserLogin from '../../models/UserLogin';
 import ImgLogin from '../../assets/img/Game analytics-amico.svg'
 import './login.css'
-import { addToken } from '../../store/tokens/actions';
 
 
 export default function Login() {
@@ -14,7 +15,7 @@ export default function Login() {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const [token, setToken] = useState("");
-    
+
     const [userLogin, setUserLogin] = useState<UserLogin>(
         {
             id: 0,
@@ -43,17 +44,34 @@ export default function Login() {
         e.preventDefault();
         try {
             await login(`/usuarios/logar`, userLogin, setToken)
-
-            alert('Usuário logado com sucesso!');
+            toast.success('Usuário logado com sucesso!', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            });
         } catch (error) {
-            alert('Dados do usuário inconsistentes. Erro ao logar!');
+            toast.error('Dados do usuário inconsistentes. Erro ao logar!', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            });
         }
     }
 
     return (
         <>
             <Grid container xs={12} className='grid-container'>
-                <Grid xs={6} xl={12} className='grid-item'>
+                <Grid xs={6} className='grid-item'>
                     <Box className='box-container'>
 
                         <form onSubmit={onSubmit}>
