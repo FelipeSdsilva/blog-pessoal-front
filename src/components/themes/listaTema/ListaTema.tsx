@@ -1,4 +1,5 @@
 import { Box } from '@mui/material';
+import { toast } from 'react-toastify';
 import { useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { busca } from '../../../services/Service';
@@ -19,7 +20,16 @@ export default function ListaTema() {
 
     useEffect(() => {
         if (token == '') {
-            alert("Você precisa estar logado")
+            toast.error('Opsss você precisa estar logado', {
+                position: 'top-right',
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            })
             navigate("/login")
         }
     }, [token])

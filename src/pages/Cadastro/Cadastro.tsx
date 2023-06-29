@@ -1,3 +1,4 @@
+import { toast } from 'react-toastify';
 import { Link, useNavigate } from 'react-router-dom'
 import { useState, useEffect, ChangeEvent } from 'react';
 import { cadastroUsuario } from '../../services/Service';
@@ -50,9 +51,29 @@ export default function Cadastro() {
         e.preventDefault()
         if (confirmarSenha == user.senha) {
             cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult)
-            alert('Usuario cadastrado com sucesso')
+
+            toast.success('Parabéns você é um novo usuário!!', {
+                position: 'top-right',
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            })
+
         } else {
-            alert('Dados inconsistentes. Favor verificar as informações de cadastro.')
+            toast.error('Opsss tem algo de errado veja novamente', {
+                position: 'top-right',
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            })
         }
     }
 

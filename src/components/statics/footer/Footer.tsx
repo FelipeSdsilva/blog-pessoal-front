@@ -1,12 +1,11 @@
 import { GitHub } from '@material-ui/icons';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { Typography, Grid, Box } from '@material-ui/core';
+import { TokenState } from '../../../store/tokens/tokensReducer';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
-import { Typography, Grid, Box } from '@material-ui/core';
 import './footer.css'
-import { useDispatch, useSelector } from 'react-redux';
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { TokenState } from '../../../store/tokens/tokensReducer';
 
 
 export default function Footer() {

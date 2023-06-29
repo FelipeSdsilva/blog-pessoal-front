@@ -1,26 +1,36 @@
 import { Box } from '@mui/material';
-import { busca } from '../../../services/Service';
+import { toast } from 'react-toastify';
+import { useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
+import { busca } from '../../../services/Service';
 import { Link, useNavigate } from 'react-router-dom'
+import { TokenState } from '../../../store/tokens/tokensReducer';
 import { Card, CardActions, CardContent, Button, Typography } from '@material-ui/core';
 import moment from 'moment';
 import Postagem from '../../../models/Postagem';
 import './listarPostagem.css'
-import { TokenState } from '../../../store/tokens/tokensReducer';
-import { useSelector } from 'react-redux';
 
 export default function ListaPostagem() {
 
     const navigate = useNavigate();
     const [posts, setPosts] = useState<Postagem[]>([])
-    
+
     const token = useSelector<TokenState, TokenState["tokens"]>(
         (state) => state.tokens
     );
-    
+
     useEffect(() => {
         if (token == "") {
-            alert("Você precisa estar logado")
+            toast.error('Opsss você precisa estar logado', {
+                position: 'top-right',
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            })
             navigate("/login")
 
         }
