@@ -1,14 +1,13 @@
-import { useNavigate, useParams } from 'react-router-dom'
+import { toast } from 'react-toastify';
+import { useSelector } from 'react-redux';
 import { ChangeEvent, useEffect, useState } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
+import { TokenState } from '../../../store/tokens/tokensReducer';
 import { busca, buscaId, post, put } from '../../../services/Service';
 import { Container, Typography, TextField, Button, Select, InputLabel, MenuItem, FormControl, FormHelperText } from "@material-ui/core"
 import Tema from '../../../models/Tema';
 import Postagem from '../../../models/Postagem';
-import useLocalStorage from 'react-use-localstorage';
 import './cadastroPost.css';
-import { TokenState } from '../../../store/tokens/tokensReducer';
-import { useSelector } from 'react-redux';
-import { toast } from 'react-toastify';
 
 export default function CadastroPost() {
 
@@ -21,10 +20,9 @@ export default function CadastroPost() {
     );
 
     useEffect(() => {
-        if (token !== "") {
-
-            toast.success('Logout!', {
-                position: "top-right",
+        if (token == "") {
+            toast.error('Opss precisa estar logado!', {
+                position: 'top-right',
                 autoClose: 2000,
                 hideProgressBar: false,
                 closeOnClick: true,
@@ -32,7 +30,7 @@ export default function CadastroPost() {
                 draggable: false,
                 theme: "colored",
                 progress: undefined,
-            });
+            })
             navigate("/login")
 
         }
@@ -99,8 +97,8 @@ export default function CadastroPost() {
                     'Authorization': token
                 }
             })
-            toast.success('Postagem atualizada!', {
-                position: "top-right",
+            toast.info('Postagem Atualizada com sucesso!', {
+                position: 'top-right',
                 autoClose: 2000,
                 hideProgressBar: false,
                 closeOnClick: true,
@@ -108,8 +106,7 @@ export default function CadastroPost() {
                 draggable: false,
                 theme: "colored",
                 progress: undefined,
-            });
-
+            })
         } else {
             post(`/postagens`, postagem, setPostagem, {
                 headers: {
@@ -117,15 +114,15 @@ export default function CadastroPost() {
                 }
             })
             toast.success('Postagem cadastrada com sucesso!', {
-            position: "top-right",
-            autoClose: 2000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: false,
-            draggable: false,
-            theme: "colored",
-            progress: undefined,
-        });
+                position: 'top-right',
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            })
         }
         back()
 
@@ -137,7 +134,7 @@ export default function CadastroPost() {
     return (
         <Container maxWidth="sm" className="topo">
             <form onSubmit={onSubmit}>
-                <Typography variant="h3" color="textSecondary" component="h1" align="center" >Formulário de cadastro postagem</Typography>
+                <Typography variant="h3" color="textSecondary" component="h1" align="center" >Mostre aqui o seus Pensamentos</Typography>
                 <TextField value={postagem.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="titulo" label="titulo" variant="outlined" name="titulo" margin="normal" fullWidth />
                 <TextField value={postagem.texto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="texto" label="texto" name="texto" variant="outlined" margin="normal" fullWidth />
 
@@ -157,7 +154,7 @@ export default function CadastroPost() {
                             ))
                         }
                     </Select>
-                    <FormHelperText>Escolha um tema para a postagem</FormHelperText>
+                    <FormHelperText>Escolha um Tema</FormHelperText>
                     <Button type="submit" variant="contained" color="primary">
                         Finalizar
                     </Button>

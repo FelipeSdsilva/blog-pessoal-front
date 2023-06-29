@@ -1,12 +1,12 @@
 import { Box } from '@mui/material';
+import { toast } from 'react-toastify'
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToken } from '../../../store/tokens/actions';
 import { AppBar, Toolbar, Typography } from '@material-ui/core';
 import { TokenState } from '../../../store/tokens/tokensReducer';
-import ImgIcon from '../../../assets/img/icons8-blog.svg'
-import './navbar.css'
-import { toast } from 'react-toastify';
+import ImgIcon from '../../../assets/img/icons8-blog.svg';
+import './navbar.css';
 
 export default function NavBar() {
 
@@ -18,9 +18,8 @@ export default function NavBar() {
 
     function goLogout() {
         dispatch(addToken(''))
-
-        toast.success('Logout!', {
-            position: "top-right",
+        toast.info('Usuario deslogado!', {
+            position: 'top-right',
             autoClose: 2000,
             hideProgressBar: false,
             closeOnClick: true,
@@ -28,7 +27,7 @@ export default function NavBar() {
             draggable: false,
             theme: "colored",
             progress: undefined,
-        });
+        })
         navigator('/login')
     }
 
@@ -37,7 +36,7 @@ export default function NavBar() {
     if (token !== '') {
         navbarComponent = <AppBar position="static" className='navBar'>
             <Toolbar variant="dense">
-                <Link to={`/`}>
+                <Link to={`/home`}>
                     <Box className='cursor' >
                         <Typography variant="h5" color="inherit">
                             <img src={ImgIcon} alt="" />

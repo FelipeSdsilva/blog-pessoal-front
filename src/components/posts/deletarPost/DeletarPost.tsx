@@ -21,7 +21,16 @@ export default function DeletarPost() {
 
     useEffect(() => {
         if (token == "") {
-            alert("Você precisa estar logado")
+            toast.error('Opss precisa estar logado!', {
+                position: 'top-right',
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            })
             navigate("/login")
         }
     }, [token])
@@ -41,14 +50,14 @@ export default function DeletarPost() {
     }
 
     function sim() {
-        navigate('/postagens')
+        navigate('/posts')
         deleteId(`/postagens/${id}`, {
             headers: {
                 'Authorization': token
             }
         });
-        toast.success('Tema deletado com sucesso', {
-            position: "top-right",
+        toast.success('Post Deletado com sucesso', {
+            position: 'top-right',
             autoClose: 2000,
             hideProgressBar: false,
             closeOnClick: true,
@@ -56,7 +65,7 @@ export default function DeletarPost() {
             draggable: false,
             theme: "colored",
             progress: undefined,
-        });
+        })
     }
 
     function nao() {

@@ -18,7 +18,7 @@ import 'react-toastify/dist/ReactToastify.css'
 export default function App() {
 
   return (
-    <Provider store={store}>,
+    <Provider store={store}>
       <ToastContainer />
       <BrowserRouter>
         <NavBar />

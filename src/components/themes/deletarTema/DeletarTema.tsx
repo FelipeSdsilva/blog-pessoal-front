@@ -1,4 +1,3 @@
-import { toast } from "react-toastify";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
@@ -21,16 +20,7 @@ export default function DeletarTema() {
 
     useEffect(() => {
         if (token == "") {
-            toast.error('Você precisa estar logado!', {
-                position: "top-right",
-                autoClose: 2000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: false,
-                draggable: false,
-                theme: "colored",
-                progress: undefined,
-            });
+            alert("Você precisa estar logado")
             navigate("/login")
         }
     }, [token])
@@ -56,16 +46,7 @@ export default function DeletarTema() {
                 'Authorization': token
             }
         });
-        toast.success('Tema deletado com sucesso!', {
-            position: "top-right",
-            autoClose: 2000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: false,
-            draggable: false,
-            theme: "colored",
-            progress: undefined,
-        });
+        alert('Tema deletado com sucesso');
     }
 
     function nao() {
