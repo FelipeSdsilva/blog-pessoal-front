@@ -54,14 +54,6 @@ export default function NavBar() {
                         </Box>
                     </Link>
 
-                    <Link to={`/posts`} className='cursor'>
-                        <Box mx={1} >
-                            <Typography variant="h6" color="inherit">
-                                Postagens
-                            </Typography>
-                        </Box>
-                    </Link>
-
                     <Link to={`/temas`} className='cursor'>
                         <Box mx={1} >
                             <Typography variant="h6" color="inherit">
