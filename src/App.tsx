@@ -36,6 +36,7 @@ export default function App() {
           <Route path="/formularioTema/:id" element={<CadastroTema />} />
           <Route path="/deletarPostagem/:id" element={<DeletarPost />} />
           <Route path="/deletarTema/:id" element={<DeletarTema />} />
+          
           <Route path={`*`} element={<Navigate to={`/`} />} />
 
         </Routes>
