@@ -13,7 +13,7 @@ import CadastroPost from './components/posts/cadastroPost/CadastroPost';
 import CadastroTema from './components/themes/cadastroTema/CadastroTema';
 import ListaPostagem from './components/posts/listaPostagem/ListaPostagem';
 import 'react-toastify/dist/ReactToastify.css';
-import Cadastro from './pages/cadastro/Cadastro';
+import Cadastro from "./pages/cadastro/Cadastro"
 
 export default function App() {
 
@@ -36,7 +36,7 @@ export default function App() {
           <Route path="/formularioTema/:id" element={<CadastroTema />} />
           <Route path="/deletarPostagem/:id" element={<DeletarPost />} />
           <Route path="/deletarTema/:id" element={<DeletarTema />} />
-          
+
           <Route path={`*`} element={<Navigate to={`/`} />} />
 
         </Routes>
