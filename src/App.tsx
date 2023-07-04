@@ -13,7 +13,7 @@ import CadastroPost from './components/posts/cadastroPost/CadastroPost';
 import CadastroTema from './components/themes/cadastroTema/CadastroTema';
 import ListaPostagem from './components/posts/listaPostagem/ListaPostagem';
 import 'react-toastify/dist/ReactToastify.css';
-import Cadastro from "./pages/cadastro/Cadastro"
+import Cadastro from "./pages/Cadastro/Cadastro"
 
 export default function App() {
 
