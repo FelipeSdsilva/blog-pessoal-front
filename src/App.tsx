@@ -13,6 +13,7 @@ import CadastroPost from './components/posts/cadastroPost/CadastroPost';
 import CadastroTema from './components/themes/cadastroTema/CadastroTema';
 import ListaPostagem from './components/posts/listaPostagem/ListaPostagem';
 import 'react-toastify/dist/ReactToastify.css';
+import Cadastro from './pages/cadastro/Cadastro';
 
 export default function App() {
 
@@ -26,7 +27,7 @@ export default function App() {
           <Route path="/" element={<Login />} />
           <Route path="/login" element={<Login />} />
           <Route path="/home" element={<Home />} />
-
+          <Route path="/cadastro" element={<Cadastro />} />
           <Route path="/posts" element={<ListaPostagem />} />
           <Route path="/temas" element={<ListaTema />} />
           <Route path="/formularioPostagem" element={<CadastroPost />} />
