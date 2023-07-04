@@ -4,7 +4,7 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import store from './store/store';
 import Home from './pages/home/Home';
 import Login from './pages/login/Login';
-import Cadastro from './pages/cadastro/Cadastro';
+import Cadastro from './pages/cadastro/Cadastro.tsx';
 import NavBar from './components/statics/navbar/Navbar';
 import Footer from './components/statics/footer/Footer';
 import ListaTema from './components/themes/listaTema/ListaTema';
